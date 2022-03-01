@@ -4,7 +4,10 @@ let tileView = document.querySelector('.tile-container');
 
 let keyboard = document.querySelector('.keyboard-container');
 
-let word = "super"
+let messageContainer = document.querySelector('.message-container');
+
+
+let wordle = "super"
 let guessRows = [
 ['','','','',''],
 ['','','','',''],
@@ -16,7 +19,7 @@ let guessRows = [
 
 let currentRow = 0;
 let currentTile = 0;
-
+let gameOver = false
 
 
 
@@ -84,7 +87,7 @@ const handleKeyChoice = (letter)=>{
         return
     }
     if(letter === "ENTER"){
-        console.log('check row')
+        checkRow()
         return
     }
         // alert(`you clicked ${key} `);
@@ -109,6 +112,37 @@ const deleteLetter = ()=>{
 
 }
    
+}
+
+const checkRow = ()=>{
+    const guess = guessRows[currentRow].join('')
+
+    if(currentTile > 4){
+        console.log(`guess = ${guess} wordle = ${wordle}`)
+        if(guess.toLowerCase() == wordle.toLowerCase()){
+            showMessage('Great!')
+            gameOver = true;
+            return
+        }
+        else{
+            if(currentRow >=5){
+                gameOver = false;
+                showMessage('Game Over')
+                return
+            }
+        if(currentRow < 5){
+            currentRow++;
+            currentTile =
+        }
+        }
+    }
+}
+
+const showMessage = (msg)=>{
+    const messageEl = document.createElement('p');
+    messageEl.textContent = msg
+    messageContainer.append(messageEl)
+    setTimeout(()=>messageContainer.removeChild(messageEl),2000)
 }
 
 
