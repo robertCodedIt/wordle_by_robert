@@ -1,4 +1,4 @@
-(function gameLogic() {
+(function gameSetup() {
 
 let tileView = document.querySelector('.tile-container');
 
