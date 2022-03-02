@@ -118,6 +118,7 @@ const checkRow = ()=>{
     const guess = guessRows[currentRow].join('')
 
     if(currentTile > 4){
+        setColor()
         console.log(`guess = ${guess} wordle = ${wordle}`)
         if(guess.toLowerCase() == wordle.toLowerCase()){
             showMessage('Great!')
@@ -132,7 +133,7 @@ const checkRow = ()=>{
             }
         if(currentRow < 5){
             currentRow++;
-            currentTile =
+            currentTile = 0;
         }
         }
     }
@@ -143,6 +144,22 @@ const showMessage = (msg)=>{
     messageEl.textContent = msg
     messageContainer.append(messageEl)
     setTimeout(()=>messageContainer.removeChild(messageEl),2000)
+}
+const setColor = ()=>{
+    const rowTiles = document.getElementById(`guessRow:${currentRow}`).childNodes
+    rowTiles.forEach((tile,idx)=>{
+    const data = tile.getAttribute('data');
+    if(data.toLowerCase() == wordle[idx].toLowerCase() ){
+        tile.classList.add('green');
+    } else if(wordle.includes(data.toLowerCase())){
+        tile.classList.add('yellow');
+
+    } else {
+        tile.classList.add('gray')
+    }
+
+
+    })
 }
 
 

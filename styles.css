@@ -77,3 +77,16 @@ align-items:center;
     margin: 0;
 }
 
+.green{
+    background: green !important;
+    color:gold !important;
+}
+.yellow{
+    background: yellow !important;
+    color:gray !important;
+}
+.gray{
+    background: gray !important;
+    color:red !important;
+}
+
