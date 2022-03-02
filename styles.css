@@ -5,6 +5,8 @@
 
 body{
     background: #121213;
+    display:grid;
+    place-items:center;
 }
 .game-container{
 height:90vh;
