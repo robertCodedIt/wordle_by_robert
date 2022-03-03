@@ -149,19 +149,32 @@ const setColor = ()=>{
     const rowTiles = document.getElementById(`guessRow:${currentRow}`).childNodes
     rowTiles.forEach((tile,idx)=>{
     const data = tile.getAttribute('data');
+  setTimeout(()=>{
+      tile.classList.add('flip')
     if(data.toLowerCase() == wordle[idx].toLowerCase() ){
         tile.classList.add('green');
+        addColorToKeys(data,'green')
     } else if(wordle.includes(data.toLowerCase())){
         tile.classList.add('yellow');
+        addColorToKeys(data,'yellow')
+
 
     } else {
         tile.classList.add('gray')
+        addColorToKeys(data,'gray')
+
     }
+  },500*idx)
 
 
     })
 }
 
+const addColorToKeys = (letter,keyColor) =>{
+const key = document.getElementById(letter);
+key.classList.add(keyColor)
+
+}
 
 
 

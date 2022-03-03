@@ -79,6 +79,26 @@ align-items:center;
     margin: 0;
 }
 
+.tile.flip{
+
+    animation: 0.5s linear flipping;
+}
+
+/* flippuing animation */
+
+@keyframes flipping {
+    0%{
+        transform:rotateX(0deg);
+    }
+    50%{
+        transform:rotateX(90deg);
+    }
+    100%{
+        transform:rotateX(0deg);
+    }
+}
+
+
 .green{
     background: green !important;
     color:gold !important;
