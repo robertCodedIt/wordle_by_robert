@@ -166,7 +166,7 @@
         })
         // set yellow overlay if a correct letter is included
         guess.forEach((guess) => {
-            if (checkWordle.includes(guess.letter.toLowerCase())) {
+            if (checkWordle.includes(guess.letter)) {
                 guess.color = 'yellow';
                 checkWordle = checkWordle.replace(guess.letter, '');
             }
