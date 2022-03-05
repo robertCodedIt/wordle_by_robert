@@ -95,7 +95,6 @@
     }
     keys.forEach(key => {
         let button = document.createElement('button');
-
         button.textContent = key;
         button.setAttribute('id', key)
         button.addEventListener('click', () => handleKeyChoice(key))
@@ -160,7 +159,7 @@
         })
         // set green overlay if correct letter 
         guess.forEach((guess, idx) => {
-            if (guess.letter == wordle[idx]) {
+            if (guess.letter== wordle[idx]) {
                 guess.color = 'green';
                 // checkWordle = checkWordle.replace(guess.letter,'')
             }
