@@ -161,18 +161,15 @@
         guess.forEach((guess, idx) => {
             if (guess.letter== wordle[idx]) {
                 guess.color = 'green';
-                // checkWordle = checkWordle.replace(guess.letter,'')
+
+
             }
-        })
-        // set yellow overlay if a correct letter is included
-        guess.forEach((guess) => {
-            if (checkWordle.includes(guess.letter)) {
+ // set yellow overlay if a correct letter is included in the row
+            else if(checkWordle.includes(guess.letter)){
                 guess.color = 'yellow';
                 checkWordle = checkWordle.replace(guess.letter, '');
             }
         })
-
-
 
         rowTiles.forEach((tile, idx) => {
             setTimeout(() => {
