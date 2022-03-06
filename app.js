@@ -1,4 +1,5 @@
 (function gameSetup() {
+    const axios = require('axios');
 
     let tileView = document.querySelector('.tile-container');
 
@@ -159,13 +160,13 @@
         })
         // set green overlay if correct letter 
         guess.forEach((guess, idx) => {
-            if (guess.letter== wordle[idx]) {
+            if (guess.letter == wordle[idx]) {
                 guess.color = 'green';
 
 
             }
- // set yellow overlay if a correct letter is included in the row
-            else if(checkWordle.includes(guess.letter)){
+            // set yellow overlay if a correct letter is included in the row
+            else if (checkWordle.includes(guess.letter)) {
                 guess.color = 'yellow';
                 checkWordle = checkWordle.replace(guess.letter, '');
             }
@@ -185,36 +186,4 @@
         key.classList.add(keyColor)
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })()
-
-
-
-
-// tile.classList.add('flip')
-// if (data.toLowerCase() == wordle[idx].toLowerCase()) {
-//     tile.classList.add('green');
-//     addColorToKeys(data, 'green')
-// } else if (wordle.includes(data.toLowerCase())) {
-//     tile.classList.add('yellow');
-//     addColorToKeys(data, 'yellow')
-
-
-// } else {
-//     tile.classList.add('gray')
-//     addColorToKeys(data, 'gray')
-
-// }
