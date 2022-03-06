@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "Wordle Clone By Robert Armstrong",
   "version": "1.0.0",
   "description": "Wordle clone in JavaScript",
   "main": "index.js",
